@@ -80,8 +80,7 @@ int _mycd(info_t *info)
 	{
 		_setenv(info, "OLDPWD", _getenv(info, "PWD="));
 		_setenv(info, "PWD", getcwd(buffer, 1024));
-	}
-	return (0);
+	}	return (0);
 }
 
 /**
@@ -94,6 +93,7 @@ int _mycd(info_t *info)
 int _myhelp(info_t *info)
 {
 	char **arg_array;
+
 	arg_array = info->argv;
 
 	_puts("help call works. Function not yet implemented \n");
