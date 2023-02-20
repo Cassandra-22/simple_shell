@@ -1,1 +1,1 @@
-simple shell team project
+simple shell team project, collaborative project between Cassandra Perumal and Simbarashe Mashavave
