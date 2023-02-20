@@ -11,7 +11,7 @@ print_list_str(info->env);
 return (0);
 }
 /**
- * getenv - gets the value of an environ variable
+ * _getenv - gets the value of an environ variable
  * @info: Structure containing potential arguments. Used to maintain
  * @name: env var name
  *
