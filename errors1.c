@@ -6,14 +6,13 @@
  * Return: 0 if no numbers in string, converted number otherwise
  *       -1 on error
  */
-
 int _erratoi(char *s)
 {
 	int i = 0;
 	unsigned long int result = 0;
 
 	if (*s == '+')
-		s++;  /* TODO: why does this make main return 255? */
+		s++;  
 	for (i = 0;  s[i] != '\0'; i++)
 	{
 		if (s[i] >= '0' && s[i] <= '9')
@@ -36,7 +35,6 @@ int _erratoi(char *s)
  * Return: 0 if no numbers in string, converted number otherwise
  *        -1 on error
  */
-
 void print_error(info_t *info, char *estr)
 {
 	_eputs(info->fname);
@@ -55,7 +53,6 @@ void print_error(info_t *info, char *estr)
  *
  * Return: number of characters printed
  */
-
 int print_d(int input, int fd)
 {
 	int (*__putchar)(char) = _putchar;
@@ -84,6 +81,7 @@ int print_d(int input, int fd)
 	}
 	__putchar('0' + current);
 	count++;
+
 	return (count);
 }
 
@@ -95,7 +93,6 @@ int print_d(int input, int fd)
  *
  * Return: string
  */
-
 char *convert_number(long int num, int base, int flags)
 {
 	static char *array;
@@ -104,18 +101,21 @@ char *convert_number(long int num, int base, int flags)
 	char *ptr;
 	unsigned long n = num;
 
-	if (!(flags & CONVERT_UNSIGNE) && num < 0)
+	if (!(flags & CONVERT_UNSIGNED) && num < 0)
 	{
 		n = -num;
 		sign = '-';
+
 	}
 	array = flags & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
 	ptr = &buffer[49];
 	*ptr = '\0';
-	do        {
+
+	do	{
 		*--ptr = array[n % base];
 		n /= base;
 	} while (n != 0);
+
 	if (sign)
 		*--ptr = sign;
 	return (ptr);
@@ -127,7 +127,6 @@ char *convert_number(long int num, int base, int flags)
  *
  * Return: Always 0;
  */
-
 void remove_comments(char *buf)
 {
 	int i;

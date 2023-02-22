@@ -8,7 +8,6 @@
  *
  * Return: size of list
  */
-
 list_t *add_node(list_t **head, const char *str, int num)
 {
 	list_t *new_head;
@@ -42,13 +41,13 @@ list_t *add_node(list_t **head, const char *str, int num)
  *
  * Return: size of list
  */
-
 list_t *add_node_end(list_t **head, const char *str, int num)
 {
 	list_t *new_node, *node;
 
 	if (!head)
 		return (NULL);
+
 	node = *head;
 	new_node = malloc(sizeof(list_t));
 	if (!new_node)
@@ -81,7 +80,6 @@ list_t *add_node_end(list_t **head, const char *str, int num)
  *
  * Return: size of list
  */
-
 size_t print_list_str(const list_t *h)
 {
 	size_t i = 0;
@@ -103,7 +101,6 @@ size_t print_list_str(const list_t *h)
  *
  * Return: 1 on success, 0 on failure
  */
-
 int delete_node_at_index(list_t **head, unsigned int index)
 {
 	list_t *node, *prev_node;
@@ -111,6 +108,7 @@ int delete_node_at_index(list_t **head, unsigned int index)
 
 	if (!head || !*head)
 		return (0);
+
 	if (!index)
 	{
 		node = *head;
@@ -142,7 +140,6 @@ int delete_node_at_index(list_t **head, unsigned int index)
  *
  * Return: void
  */
-
 void free_list(list_t **head_ptr)
 {
 	list_t *node, *next_node, *head;
