@@ -15,7 +15,6 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 
 	if (!*len)
 	{
-		
 		free(*buf);
 		*buf = NULL;
 		signal(SIGINT, sigintHandler);
@@ -58,11 +57,11 @@ ssize_t get_input(info_t *info)
 
 	_putchar(BUF_FLUSH);
 	r = input_buf(info, &buf, &len);
-	if (r == -1) 
+	if (r == -1)
 		return (-1);
 	if (len)
 	{
-		j = i; 
+		j = i;
 		p = buf + i;
 
 		check_chain(info, buf, &j, i, len);
